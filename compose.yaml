@@ -1,0 +1,14 @@
+services:
+  mongo:
+    image: mongo:latest
+    ports:
+      - target: 27017
+        published: 27024
+        protocol: tcp
+        mode: host
+    volumes:
+      - ./data/mongodb/data:/data/db
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password
